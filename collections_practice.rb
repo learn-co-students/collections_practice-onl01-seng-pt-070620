@@ -5,7 +5,7 @@ def sort_array_asc(array)
 end
 
 def sort_array_desc(array)
-  array.sort.reverse
+  array.sort { | left, right| right <=> left }
 end
 
 def sort_array_char_count(array)
@@ -23,18 +23,26 @@ def reverse_array(array)
   array.reverse
 end
 
+#def kesha_maker(array)
+#  new_array = []
+#  array.each do |string|
+#    string_array = string.split ""
+#    string_array[2] = "$"
+#    new_array << string_array.join
+#  end
+#  new_array
+#end
+
 def kesha_maker(array)
-  new_array = []
-  array.each do |string|
-    string_array = string.split ""
-    string_array[2] = "$"
-    new_array << string_array.join
-  end
-  new_array
+  array.each { |item| item[2] = "$" }
 end
 
+#def find_a(array)
+#  array.select {|string| string.start_with?("a") }
+#end
+
 def find_a(array)
-  array.select {|string| string.start_with?("a") }
+  array.find_all { |word| word[0] == "a" }
 end
 
 def sum_array(array)

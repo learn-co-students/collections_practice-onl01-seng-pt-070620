@@ -1,36 +1,40 @@
 def sort_array_asc(array)
-  array.sort do |a, b|
-  a <=> b
-  end
+  array.sort
 end
 
 def sort_array_desc(array)
-  array.sort! do |a, b|
-  a <=> b
-  end
+  array.sort! { |x,y| y <=> x }
 end
 
 def sort_array_char_count(array)
+  array.sort {|left, right| left.length <=> right.length}
+ end
+
+ def swap_elements(array)
+  array[0], array[1], array[2] = array[0], array[2], array[1]
+ end
+
+ def reverse_array(array)
+  array.reverse 
+   end
+
+ def kesha_maker(array)
+  array.each do |item|
+    item[2] = "$" 
+   end
+ end
+
+ def find_a(array)
+ array.collect |temp|
+ yield(array.start_with("a"))
+  end
   array
-  end
-end
+ end
 
-def swap_elements(array)
-  
-  end
-end
+ def sum_array(array)
+  array.sum 
+ end
 
-def reverse_array(array)
-  
-  end
-end
-
-def kesha_maker(array)
-  
-  end
-end
-
-def find_a(array)
-  
-  end
-end
+ def add_s(array)
+  array.map.with_index{|v,i| i==1 ? v : v + 's'}
+ end

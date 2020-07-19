@@ -25,10 +25,13 @@ def sort_array_char_count(array)
  end
 
  def find_a(array)
- array.collect |temp|
- yield(array.start_with("a"))
+  temp = []
+  array.collect do |item|
+    if item.start_with?("a")
+      temp.push(item)
+    end
   end
-  array
+    temp
  end
 
  def sum_array(array)

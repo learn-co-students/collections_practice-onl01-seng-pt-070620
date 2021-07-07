@@ -1,9 +1,10 @@
+require 'pry'
 def sort_array_asc(array)
   array.sort
 end
 
 def sort_array_desc(array)
-   array.sort.reverse
+  array.sort.reverse
 end
 
 def sort_array_char_count(array)
@@ -15,10 +16,6 @@ end
 def swap_elements(array)
   array[1], array[2] = array[2],array[1]
   array
-end
-
-def swap_elements_from_to(array,index,destination_index)
-  array[index] , array[destination_index] = array[destination_index] , array[index]
 end
 
 def reverse_array(array)
@@ -34,11 +31,7 @@ def kesha_maker(array)
   new_array
 end
 
-def find_a(array)
-  array.select do |str|
-    str.start_with?("a")
-  end
-end
+
 
 def sum_array(array)
   sum = 0
@@ -48,7 +41,7 @@ def sum_array(array)
   sum
 end
 
-def add_s(array)
+def add_a(array)
   array.each_with_index.collect do |element,index|
     if index != 1
       element = element + "s"
@@ -58,5 +51,5 @@ def add_s(array)
   end
 end
 
-
-
+binding.pry
+add_a(["nas","fa","mat"])
